@@ -2,9 +2,8 @@ import joblib
 import os
 from pathlib import Path
 
-# Get the project root directory (2 levels up from this file)
 PROJECT_ROOT = Path(__file__).parent.parent.parent
-MODEL_PATH = PROJECT_ROOT / "models" / "student_risk_model.pkl"
+MODEL_PATH = PROJECT_ROOT / "models" / "student_risk_models.pkl"
 
 # Cache for model bundle
 _model_bundle = None
@@ -18,8 +17,11 @@ def load_model_bundle():
     
     return _model_bundle
 
-def get_model():
-    return load_model_bundle()["model"]
+def get_logistic_model():
+    return load_model_bundle()["logistic_model"]
+
+def get_decision_tree_model():
+    return load_model_bundle()["decision_tree_model"]
 
 def get_encoder():
     return load_model_bundle()["encoder"]
