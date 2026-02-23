@@ -46,8 +46,8 @@ def test_prediction():
     """Test the prediction endpoint"""
     url = "http://localhost:8000/api/predict"
     
-    print("🧪 Testing Student Risk Prediction API...\n")
-    print("📊 Sample Student Data:")
+    print("Testing Student Risk Prediction API...\n")
+    print("Sample Student Data:")
     print(json.dumps(sample_student, indent=2))
     print("\n" + "="*50 + "\n")
     
@@ -56,40 +56,40 @@ def test_prediction():
         
         if response.status_code == 200:
             result = response.json()
-            print("✅ Prediction Successful!\n")
-            print(f"🎯 Risk Level: {result['risk_level']}")
-            print(f"📈 Confidence: {result['confidence']}%")
-            print(f"💬 Message: {result['message']}")
+            print("Prediction Successful!\n")
+            print(f"Risk Level: {result['risk_level']}")
+            print(f"Confidence: {result['confidence']}%")
+            print(f"Message: {result['message']}")
         else:
-            print(f"❌ Error: {response.status_code}")
+            print(f"Error: {response.status_code}")
             print(response.text)
             
     except requests.exceptions.ConnectionError:
-        print("❌ Connection Error!")
+        print("Connection Error!")
         print("Make sure the server is running:")
         print("   python app/main.py")
     except Exception as e:
-        print(f"❌ Error: {str(e)}")
+        print(f"Error: {str(e)}")
 
 def test_health():
     """Test the health endpoint"""
     url = "http://localhost:8000/api/health"
     
     print("\n" + "="*50 + "\n")
-    print("🏥 Testing Health Endpoint...\n")
+    print("Testing Health Endpoint...\n")
     
     try:
         response = requests.get(url)
         if response.status_code == 200:
-            print("✅ API is healthy!")
+            print("API is healthy!")
             print(response.json())
         else:
-            print(f"❌ Health check failed: {response.status_code}")
+            print(f"Health check failed: {response.status_code}")
     except Exception as e:
-        print(f"❌ Error: {str(e)}")
+        print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     test_health()
     test_prediction()
     print("\n" + "="*50)
-    print("\n🌐 Open http://localhost:8000 in your browser to use the UI!")
+    print("\nOpen http://localhost:8000 in your browser to use the UI!")
