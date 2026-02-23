@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from .model_loader import (
-    get_model,
+    get_decision_tree_model,
     get_encoder,
     get_scaler,
     get_categorical_cols,
@@ -9,8 +9,8 @@ from .model_loader import (
 )
 
 def predict_student_risk(input_data: dict):
-    """Predict risk using saved model bundle"""
-    model = get_model()
+    """Predict risk using the decision tree model."""
+    model = get_decision_tree_model()
     encoder = get_encoder()
     scaler = get_scaler()
     categorical_cols = get_categorical_cols()

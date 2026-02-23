@@ -2,7 +2,8 @@
 
 from .model_loader import (
     load_model_bundle,
-    get_model,
+    get_logistic_model,
+    get_decision_tree_model,
     get_encoder,
     get_scaler,
     get_categorical_cols,
@@ -12,7 +13,8 @@ from .predict import predict_student_risk
 
 __all__ = [
     'load_model_bundle',
-    'get_model',
+    'get_logistic_model',
+    'get_decision_tree_model',
     'get_encoder',
     'get_scaler',
     'get_categorical_cols',
