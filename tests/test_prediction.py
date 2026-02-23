@@ -1,4 +1,10 @@
 """Test prediction with dummy data"""
+import sys
+from pathlib import Path
+
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 from app.services import predict_student_risk, get_numerical_cols, get_categorical_cols
 
 # Get expected columns
